@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Слушаетли в JS</title>
+</head>
+<body>
+    <style>
+        h1.red{
+            color: red;
+        }
+    </style>
+    <h1 class="h1">Whats up BRO</h1>
+    <button id="set-color">Изменить цвет</button>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{ /*Мы создаем слушателя DOMContentLoaded чтоб
+                             код находящийся внутри функции выполнится тогда когда наша DOM-страница загрузиться */  
+
+            const btn = document.getElementById("set-color")
+            console.log(btn);
+
+            btn.onclick = function(){
+                document.querySelector('.h1').classList.toggle('red')
+            }
+        })
+    </script>
+</body>
+</html>
