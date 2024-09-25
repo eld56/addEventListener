@@ -7,8 +7,14 @@
 </head>
 <body>
     <style>
-        h1.red{
-            color: red;
+        body{
+            height: 500vh;
+        }
+        .h1{
+            position: fixed;
+        }
+        h1.scrolled{
+            background-color: coral;
         }
     </style>
     <h1 class="h1">Whats up BRO</h1>
@@ -17,12 +23,14 @@
         document.addEventListener("DOMContentLoaded", ()=>{ /*Мы создаем слушателя DOMContentLoaded чтоб
                              код находящийся внутри функции выполнится тогда когда наша DOM-страница загрузиться */  
 
-            const btn = document.getElementById("set-color")
-            console.log(btn);
+            window.addEventListener("scroll", function(){
+                if(pageYOffset > 300){
+                    document.querySelector(".h1").classList.add("scrolled")
+                }else{
+                    document.querySelector(".h1").classList.remove("scrolled")
+                }
+            })
 
-            btn.onclick = function(){
-                document.querySelector('.h1').classList.toggle('red')
-            }
         })
     </script>
 </body>
